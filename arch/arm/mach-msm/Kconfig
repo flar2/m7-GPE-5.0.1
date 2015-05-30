@@ -239,6 +239,122 @@ config ARCH_APQ8064_M7
 	select MSM_CPU_PWRCTL
 	select MSM_IOMMU_GPU_SYNC
 
+config ARCH_APQ8064_M7DXG
+	bool "APQ8064_M7DXG"
+	select ARCH_MSM_KRAITMP
+	select GPIO_MSM_V2
+	select ARM_GIC
+	select CPU_V7
+	select MSM_SCM if SMP
+	select MSM_GPIOMUX
+	select MSM_REMOTE_SPINLOCK_SFPB
+	select MSM_PIL
+	select MSM_QDSP6_APR
+	select MSM_QDSP6_CODECS
+	select MSM_AUDIO_QDSP6 if SND_SOC
+	select MULTI_IRQ_HANDLER
+	select MSM_RPM
+	select MSM_SPM_V2
+	select MSM_L2_SPM
+	select MSM_PM8X60 if PM
+	select CPU_HAS_L2_PMU
+	select HOLES_IN_ZONE if SPARSEMEM
+	select CLEANCACHE
+	select QCACHE
+	select MIGHT_HAVE_PCI
+	select ARCH_SUPPORTS_MSI
+	select ARM_HAS_SG_CHAIN
+	select MSM_KRAIT_WFE_FIXUP
+	select MSM_CPU_PWRCTL
+	select MSM_IOMMU_GPU_SYNC
+
+config ARCH_APQ8064_T6DXG
+	bool "APQ8064_T6DXG"
+	select ARCH_MSM_KRAITMP
+	select GPIO_MSM_V2
+	select ARM_GIC
+	select CPU_V7
+	select MSM_SCM if SMP
+	select MSM_GPIOMUX
+	select MSM_REMOTE_SPINLOCK_SFPB
+	select MSM_PIL
+	select MSM_QDSP6_APR
+	select MSM_QDSP6_CODECS
+	select MSM_AUDIO_QDSP6 if SND_SOC
+	select MULTI_IRQ_HANDLER
+	select MSM_RPM
+	select MSM_SPM_V2
+	select MSM_L2_SPM
+	select MSM_PM8X60 if PM
+	select CPU_HAS_L2_PMU
+	select HOLES_IN_ZONE if SPARSEMEM
+	select CLEANCACHE
+	select QCACHE
+	select MIGHT_HAVE_PCI
+	select ARCH_SUPPORTS_MSI
+	select ARM_HAS_SG_CHAIN
+	select MSM_KRAIT_WFE_FIXUP
+	select MSM_CPU_PWRCTL
+	select MSM_IOMMU_GPU_SYNC
+
+config ARCH_APQ8064_DLXP
+	bool "APQ8064_DLXP"
+	select ARCH_MSM_KRAITMP
+	select GPIO_MSM_V2
+	select ARM_GIC
+	select CPU_V7
+	select MSM_SCM if SMP
+	select MSM_GPIOMUX
+	select MSM_REMOTE_SPINLOCK_SFPB
+	select MSM_PIL
+	select MSM_QDSP6_APR
+	select MSM_QDSP6_CODECS
+	select MSM_AUDIO_QDSP6 if SND_SOC
+	select MULTI_IRQ_HANDLER
+	select MSM_RPM
+	select MSM_SPM_V2
+	select MSM_L2_SPM
+	select MSM_PM8X60 if PM
+	select CPU_HAS_L2_PMU
+	select HOLES_IN_ZONE if SPARSEMEM
+	select CLEANCACHE
+	select QCACHE
+	select MIGHT_HAVE_PCI
+	select ARCH_SUPPORTS_MSI
+	select ARM_HAS_SG_CHAIN
+	select MSM_KRAIT_WFE_FIXUP
+	select MSM_IOMMU_GPU_SYNC
+	select MSM_CPU_PWRCTL
+
+config ARCH_APQ8064_DLPDXG
+	bool "APQ8064_DLPDXG"
+	select ARCH_MSM_KRAITMP
+	select GPIO_MSM_V2
+	select ARM_GIC
+	select CPU_V7
+	select MSM_SCM if SMP
+	select MSM_GPIOMUX
+	select MSM_REMOTE_SPINLOCK_SFPB
+	select MSM_PIL
+	select MSM_QDSP6_APR
+	select MSM_QDSP6_CODECS
+	select MSM_AUDIO_QDSP6 if SND_SOC
+	select MULTI_IRQ_HANDLER
+	select MSM_RPM
+	select MSM_SPM_V2
+	select MSM_L2_SPM
+	select MSM_PM8X60 if PM
+	select CPU_HAS_L2_PMU
+	select HOLES_IN_ZONE if SPARSEMEM
+	select CLEANCACHE
+	select QCACHE
+	select MIGHT_HAVE_PCI
+	select ARCH_SUPPORTS_MSI
+	select ARM_HAS_SG_CHAIN
+	select MSM_KRAIT_WFE_FIXUP
+	select MSM_IOMMU_GPU_SYNC
+	select MSM_CPU_PWRCTL
+
 config ARCH_MSM8974
 	bool "MSM8974"
 	select ARCH_MSM_KRAITMP
@@ -323,11 +439,59 @@ config MACH_K2_U
 	help
 	  Support for the HTC K2_U
 
+config MACH_TC2
+	depends on ARCH_MSM8930
+	bool "TC2"
+	help
+	  Support for the HTC TC2
+
+config MACH_ZARA
+	depends on ARCH_MSM8930
+	bool "ZARA"
+	help
+	  Support for the HTC ZARA
+
+config MACH_ZARA_CL
+	depends on ARCH_MSM8930
+	bool "ZARA_CL"
+	help
+	  Support for the HTC ZARA_CL
+
+config MACH_ZARA_WL
+	depends on ARCH_MSM8930
+	bool "ZARA_WL"
+	help
+	  Support for the HTC ZARA_WL
+
+config MACH_CP5_WL
+	depends on ARCH_MSM8930
+	bool "CP5_WL"
+	help
+	  Support for the HTC CP5_WL
+
 config MACH_K2_UL
 	depends on ARCH_MSM8930
 	bool "K2_UL"
 	help
 	  Support for the HTC K2_UL
+
+config MACH_M4_UL
+	depends on ARCH_MSM8930
+	bool "M4_UL"
+	help
+	  Support for the HTC M4_UL
+
+config MACH_M4_U
+	depends on ARCH_MSM8930
+	bool "M4_U"
+	help
+	  Support for the HTC M4
+
+config MACH_ZIP_CL
+	depends on ARCH_MSM8930
+	bool "ZIP_CL"
+	help
+	  Support for the HTC ZIP_CL
 
 config MACH_ZIP_CL_MI2S_DATA_SWITCH
 	depends on MACH_ZIP_CL
@@ -2810,30 +2974,6 @@ config MACH_MONARUDO
 	help
 	  Support for the HTC APQ8064 MONARUDO.
 
-config MACH_DELUXE_J
-        depends on ARCH_APQ8064
-        bool "APQ8064 DELUXE_J"
-        help
-          Support for the HTC APQ8064 DELUXE_J.
-
-config MACH_DELUXE_UB1
-        depends on ARCH_APQ8064
-        bool "APQ8064 DELUXE_UB1"
-        help
-          Support for the HTC APQ8064 DELUXE_UB1.
-
-config MACH_DELUXE_U
-        depends on ARCH_APQ8064
-        bool "APQ8064 DELUXE_U"
-        help
-          Support for the HTC APQ8064 DELUXE_U.
-
-config MACH_DELUXE_UL
-        depends on ARCH_APQ8064
-        bool "APQ8064 DELUXE_UL"
-        help
-          Support for the HTC APQ8064 DELUXE_UL.
-
 config MACH_IMPRESSION_J
         depends on ARCH_APQ8064
         bool "APQ8064 IMPRESSION_J"
@@ -2845,49 +2985,6 @@ config MACH_M7_UL
         bool "APQ8064 M7_UL"
         help
           Support for the HTC APQ8064 M7_UL.
-
-config MACH_M7_U
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_U"
-        help
-          Support for the HTC APQ8064 M7_U.
-
-config MACH_M7_WLS
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_WLS"
-        help
-          Support for the HTC APQ8064 M7_WLS.
-
-config MACH_M7_WLV
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_WLV"
-        help
-          Support for the HTC APQ8064 M7_WLV.
-
-config MACH_M7_WLJ
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_WLJ"
-        help
-          Support for the HTC APQ8064 M7_WLJ.
-
-
-config MACH_M7_DCG
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_DCG"
-        help
-          Support for the HTC APQ8064 M7_DCG.
-
-config MACH_M7_DUG
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_DUG"
-        help
-          Support for the HTC APQ8064 M7_DUG.
-
-config MACH_M7_EVM
-        depends on ARCH_APQ8064
-        bool "APQ8064 M7_EVM"
-        help
-          Support for the HTC APQ8064 M7_EVM.
 
 config QSC_MODEM
         default n

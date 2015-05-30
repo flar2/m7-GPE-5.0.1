@@ -1252,6 +1252,7 @@ int ddl_vidc_decode_get_avg_time(struct ddl_client_context *ddl)
 {
 	int avg_time = 0;
 	struct ddl_decoder_data *decoder = &(ddl->codec_data.decoder);
+	if (!decoder) return avg_time;
 	avg_time = decoder->avg_dec_time;
 	return avg_time;
 }
