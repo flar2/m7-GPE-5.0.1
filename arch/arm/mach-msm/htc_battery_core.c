@@ -28,7 +28,6 @@
 #include <linux/android_alarm.h>
 #include <mach/board_htc.h>
 
-
 static ssize_t htc_battery_show_property(struct device *dev,
 					struct device_attribute *attr,
 					char *buf);

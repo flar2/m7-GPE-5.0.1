@@ -182,17 +182,7 @@ static inline int phy_find_setting(int speed, int duplex)
 	return idx < MAX_NUM_SETTINGS ? idx : MAX_NUM_SETTINGS - 1;
 }
 
-/**
- * phy_find_valid - find a PHY setting that matches the requested features mask
- * @idx: The first index in settings[] to search
- * @features: A mask of the valid settings
- *
- * Description: Returns the index of the first valid setting less
- *   than or equal to the one pointed to by idx, as determined by
- *   the mask in features.  Returns the index of the last setting
- *   if nothing else matches.
- */
-static inline int phy_find_valid(int idx, u32 features)
+static inline int phy_find_valid(unsigned int idx, u32 features)
 {
 	while (idx < MAX_NUM_SETTINGS && !(settings[idx].setting & features))
 		idx++;

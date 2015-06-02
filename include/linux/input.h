@@ -1257,6 +1257,12 @@ struct ff_effect {
  *	accessing the list dev->mutex must be held
  * @node: used to place the device onto input_dev_list
  */
+struct input_value {
+	__u16 type;
+	__u16 code;
+	__s32 value;
+}; 
+
 struct input_dev {
 	const char *name;
 	const char *phys;
@@ -1319,12 +1325,14 @@ struct input_dev {
 	unsigned int users;
 	bool going_away;
 
-	bool sync;
-
 	struct device dev;
 
 	struct list_head	h_list;
 	struct list_head	node;
+
+	unsigned int num_vals;
+	unsigned int max_vals;
+	struct input_value *vals;
 };
 #define to_input_dev(d) container_of(d, struct input_dev, dev)
 
@@ -1421,6 +1429,8 @@ struct input_handler {
 	void *private;
 
 	void (*event)(struct input_handle *handle, unsigned int type, unsigned int code, int value);
+	void (*events)(struct input_handle *handle,
+		       const struct input_value *vals, unsigned int count);
 	bool (*filter)(struct input_handle *handle, unsigned int type, unsigned int code, int value);
 	bool (*match)(struct input_handler *handler, struct input_dev *dev);
 	int (*connect)(struct input_handler *handler, struct input_dev *dev, const struct input_device_id *id);
